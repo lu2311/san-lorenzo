@@ -1,14 +1,43 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 #header {
-    background-color: #0078C5;
+  background-color: #0078c5;
 
-    .img_nav {
-        width: 150px;
-    }
+  .img_nav {
+    width: 150px;
+  }
+}
 
+#main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.imagen-main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.imagen-main::before {
+  margin: 0;
+  height: 400px;
+  width: 100%;
+  background-image: url("../images.jfif");
+  background-size: cover;
+  background-position: center;
+  filter: opacity(0.5);
+  z-index: 0;
+}
+
+.texto-main {
+  position: relative;
+  color: black;
+  z-index: 1;
 }
