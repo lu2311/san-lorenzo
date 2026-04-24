@@ -1,43 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  background-color: #EAF3F8;
+}
+
+html {
+  scroll-padding-top: 90px; 
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+
 }
 
+/*Encabezado*/
 #header {
-  background-color: #0078c5;
+  background-color: #fff;
 
   .img_nav {
     width: 150px;
   }
 }
 
+#navbarNav {
+
+  .nav-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2492d6;
+    padding: 10px;
+  }
+}
+
+.contacto-nav {
+  display: inline-block;
+  background-color: #2492d6;
+  color: #fff !important;
+  border-radius: 10px;
+}
+
+/*Principal*/
 #main {
   width: 100%;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  display: grid;
 }
 
-.imagen-main {
+.hero {
   position: relative;
-  height: 100%;
   width: 100%;
 }
 
-.imagen-main::before {
-  margin: 0;
-  height: 400px;
+.img-main {
   width: 100%;
-  background-image: url("../images.jfif");
-  background-size: cover;
-  background-position: center;
-  filter: opacity(0.5);
-  z-index: 0;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  /*filter: blur(2px)*/
 }
 
 .texto-main {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: clamp(10px, 6vw, 80px);
+  width: 500px;
+  max-width: 90%;
+  right: auto;
+  padding: 2%;
+  border-radius: 10px;
+  transform: translateY(-50%);
+  background-color: #ffffff9c;
   color: black;
-  z-index: 1;
+}
+
+.titulo-principal {
+  font-size: 1.6rem;
+  font-weight: 550;
+}
+
+.texto-principal {
+  font-size: 1rem;
+}
+
+.boton-main {
+  background-color: #2492d6d3;
+  display: inline-block;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/*Nosotros*/
+.titulo-nosotros {
+  font-size: 1.6rem;
+  font-weight: 550;
+}
+
+.carrusel-nosotros {
+  border-radius: 100px;
+}
+
+/*Valores*/
+.texto-valores {
+  font-size: 1.8rem;
+  font-weight: 550;
+}
+
+.cards-formato {
+  background-color: #EAF3F8;
+  border-radius: 20px;
+  color: #1567A2;
+
+  border: none;
+
+  .card-text {
+    color: #EAF3F8;
+  }
+}
+
+.cards-formato .card-header {
+  background-color: transparent;
+  border-bottom: none;
+}
+
+.cards-formato:hover {
+  background-color: #2492d6;
+  color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+  .envoltura-cards {
+    border: #fff 3px solid;
+  }
+
+}
+
+.cards-formato:hover .card-header {
+  background-color: rgba(0, 0, 0, .03);
+  border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.envoltura-cards {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #1567A2 3px solid;
+  font-size: 1.5rem;
+}
+
+/*Contacto*/
+.titulo-contacto {
+  font-size: 1.6rem;
+  font-weight: 550;
+}
+
+.whatsapp-contacto {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  background-color: #25d366;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 20px;
+  max-width: 100%;
+  flex-wrap: wrap;
+
+  span {
+    margin: 0;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    margin-right: 10px;
+  }
+
+  i {
+    color: #fff;
+    font-size: 30px;
+  }
+}
+
+.boton-whatsapp-contacto:hover{
+  scale: 1.05;
+}
+
+/*WhatsApp*/
+.whatsapp-boton {
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  bottom: 40px;
+  right: 50px;
+  background-color: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-boton i {
+  font-size: 40px;
+  flex-shrink: 0;
+}
+
+.texto-wsp {
+  opacity: 0;
+  white-space: nowrap;
+  font-size: 19px;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  display: none;
+
+}
+
+.whatsapp-boton:hover {
+  width: 210px;
+  justify-content: flex-start;
+  padding-left: 20px;
+
+  .texto-wsp {
+    display: block;
+  }
+}
+
+.whatsapp-boton:hover .texto-wsp {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/*Servicios*/
+.titulo-servicios {
+  font-size: 1.6rem;
+  font-weight: 550;
+}
+
+.card-servicio img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: blur(2px) opacity(0.3);
+}
+
+.card-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.texto-servicios {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.titulo-servicio {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.definicion-servicio {
+  display: none;
+  padding: 0px 30px;
+  font-size: 1.2rem;
+}
+
+.card-servicio:hover {
+  .texto-servicios {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+
+  .titulo-servicio {
+    font-size: 1.2rem;
+    padding: 0px 30px;
+    text-align: left;
+  }
+
+  .definicion-servicio {
+    display: block;
+  }
+}
+
+/*Footer*/
+.footer {
+  background-color: #1567A2;
+
+  .footer-container {
+    padding: 20px 0 20px 20px;
+    color: #fff;
+    .col-md-3{
+      padding: 20px 10px;
+    }
+  }
+
+  .links {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .contacto-footer {
+    i {
+      margin-right: 5px;
+    }
+  }
+
+  .contenedor-iconos {
+    font-size: 30px;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .icono-red:hover {
+    position: relative;
+    top: -5px;
+  }
+
+  .copy-footer {
+    background-color: black;
+    color: #fff;
+    font-size: 15px;
+    font-weight: lighter;
+  }
 }
