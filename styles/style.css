@@ -199,7 +199,7 @@ html {
   width: 70px;
   height: 70px;
   bottom: 40px;
-  right: 50px;
+  right: 20px;
   background-color: #25d366;
   color: #fff;
   display: flex;
@@ -274,7 +274,7 @@ html {
   width: 100%;
   padding: 20px;
   transform: translateY(-50%);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease;  
 }
 
 .titulo-servicio {
@@ -294,6 +294,7 @@ html {
     margin: 0;
     padding: 0;
     text-align: left;
+    overflow:scroll;
   }
 
   .titulo-servicio {
@@ -306,6 +307,8 @@ html {
     display: block;
   }
 }
+
+
 
 /*Footer*/
 .footer {
